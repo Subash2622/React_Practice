@@ -16,3 +16,6 @@ function App() {
 }
 
 export default App;
+//First run this command
+//npm install react-bootstrap bootstrap
+//then import which comonent you want ex. import { Button } from "react-bootstrap";
