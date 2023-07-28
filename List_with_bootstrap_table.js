@@ -36,5 +36,5 @@ function App() {
     </div>
   );
 }
-//In return statement for loop does not support, while map support in return statement
+//We use "key" because in virtual dom ame kichi condition dei show kari pariba 
 export default App;
