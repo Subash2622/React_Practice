@@ -1,18 +1,40 @@
 import "./App.css";
 import "./style.css";
 import style from "./custom.modoule.css";
-import { Button } from "react-bootstrap";
+import { Table } from "react-bootstrap";
 function App() {
+  const users = [
+    { name: "Subash", email: "shubu@test.com", contact: "111", age: 26 },
+    { name: "Dinesh", email: "dinesh@test.com", contact: "222", age: 26 },
+    { name: "Manik", email: "manik@test.com", contact: "111", age: 26 },
+    { name: "govind", email: "govind@test.com", contact: "777", age: 26 },
+  ];
+
   return (
     <div className="App">
-      <h1 className="primary">Hello World 1</h1>
-      <h1 style={{ color: "red", backgroundColor: "yellow" }}>
-        Hello World 2{" "}
-      </h1>
-      <h1 className={style.success}>Hello World 3</h1>
-      <Button>Click Hello</Button>
+      <h1>List With Bootstrap Table</h1>
+      <Table striped variant="dark">
+        <tbody>
+          <tr>
+            <td>Name</td>
+            <td>Email</td>
+            <td>Contacts</td>
+            <td>Age</td>
+          </tr>
+          {users.map((item, i) =>
+            item.age === 26 ? (
+              <tr key={i}>
+                <td>{item.name}</td>
+                <td>{item.email}</td>
+                <td>{item.contact}</td>
+                <td>{item.age}</td>
+              </tr>
+            ) : null
+          )}
+        </tbody>
+      </Table>
     </div>
   );
 }
-
+//In return statement for loop does not support, while map support in return statement
 export default App;
