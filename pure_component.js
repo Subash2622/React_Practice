@@ -1,18 +1,40 @@
-import "./App.css";
-import "./style.css";
-import style from "./custom.modoule.css";
-import { Button } from "react-bootstrap";
-function App() {
+import './App.css';
+import React from 'react'
+import Counter from './Counter'
+class  App extends React.Component {
+  constructor()
+  {
+    super();
+    this.state={
+      count:1
+    }
+  }
+ render()
+ {
   return (
     <div className="App">
-      <h1 className="primary">Hello World 1</h1>
-      <h1 style={{ color: "red", backgroundColor: "yellow" }}>
-        Hello World 2{" "}
-      </h1>
-      <h1 className={style.success}>Hello World 3</h1>
-      <Button>Click Hello</Button>
+     <Counter count={this.state.count} />
+      <button 
+      onClick={()=>{this.setState({count:this.state.count+1})}}
+      >Update Count</button>
     </div>
   );
+ }
 }
 
 export default App;
+//New Component 
+import React from 'react'
+class Counter extends React.PureComponent{
+    render()
+    {
+        console.warn("counter re-render")
+        return(
+            <div>
+                <h1>Counter Component {this.props.count}</h1>
+            </div>
+        )
+    }
+}
+
+export default Counter
