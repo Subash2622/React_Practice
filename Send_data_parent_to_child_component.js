@@ -19,7 +19,7 @@ export default App;
 //New Component- User
 function User(props)
 {
-    const name="Anil Sidhu"
+    const name="Subash Sahoo"
     return(
         <div>
             <h1>User Name is : </h1>
