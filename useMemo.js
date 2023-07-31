@@ -1,16 +1,22 @@
-import "./App.css";
-import "./style.css";
-import style from "./custom.modoule.css";
-import { Button } from "react-bootstrap";
+import './App.css';
+import React, { useState } from 'react'
 function App() {
+  const [count, setData] = useState(1)
+  const [item, setItem] = useState(20)
+
+  const newApple=React.useMemo(
+    function appleTime() {
+      console.warn("Hello")
+      return 100 * count;
+    }
+  ,[item])
   return (
     <div className="App">
-      <h1 className="primary">Hello World 1</h1>
-      <h1 style={{ color: "red", backgroundColor: "yellow" }}>
-        Hello World 2{" "}
-      </h1>
-      <h1 className={style.success}>Hello World 3</h1>
-      <Button>Click Hello</Button>
+      <h1>Hooks in React {count}</h1>
+      {newApple}
+      <button onClick={() => setData(count + 1)}>Update State</button>
+      <button onClick={() => setItem(item * 10)}>Update State</button>
+
     </div>
   );
 }
