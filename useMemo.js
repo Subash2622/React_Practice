@@ -1,22 +1,24 @@
-import './App.css';
-import React, { useState } from 'react'
+import "./App.css";
+import React, { useState, useMemo } from "react";
 function App() {
-  const [count, setData] = useState(1)
-  const [item, setItem] = useState(20)
+  const [count, setCount] = useState(1);
+  const [item, setItem] = useState(20);
 
-  const newApple=React.useMemo(
-    function appleTime() {
-      console.warn("Hello")
-      return 100 * count;
-    }
-  ,[item])
+  const multicountMemo = useMemo(
+    function multicount() {
+      console.warn("Hello");
+      return 5 * count;
+    },
+    [count]
+  );
   return (
     <div className="App">
-      <h1>Hooks in React {count}</h1>
-      {newApple}
-      <button onClick={() => setData(count + 1)}>Update State</button>
-      <button onClick={() => setItem(item * 10)}>Update State</button>
-
+      <h2>Usememo Hook in react</h2>
+      <h2>Count : {count}</h2>
+      <h2>Item : {item}</h2>
+      <h2>{multicountMemo}</h2>
+      <button onClick={() => setCount(count + 1)}>Update count</button>
+      <button onClick={() => setItem(item * 10)}>Update item</button>
     </div>
   );
 }
