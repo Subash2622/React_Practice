@@ -1,3 +1,8 @@
+// In React, a Higher-Order Component (HOC) is a design pattern used to enhance the functionality and reusability of components. 
+// It is not a built-in feature of React but rather a pattern that developers can utilize. HOCs are functions that take a component 
+// as an input and return a new component with additional props or behavior.
+
+The main purpose of using HOCs is to share logic between multiple components without repeating code. This pattern encourages the separation of concerns and allows for better code organization and maintainability.
 import './App.css';
 import React, { useRef, useState } from 'react'
 function App() {
