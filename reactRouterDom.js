@@ -16,3 +16,19 @@ function App() {
 }
 
 export default App;
+//Home Component
+import React from "react";
+
+function Home() {
+  return <h1>Home</h1>;
+}
+
+export default Home;
+//About Component
+import React from "react";
+
+function About() {
+  return <h1>About</h1>;
+}
+
+export default About;
