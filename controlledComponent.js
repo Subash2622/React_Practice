@@ -1,4 +1,4 @@
-//When we controll with state
+//When we controll input field with state
 import './App.css';
 import React,{useState} from 'react'
 function App() {
