@@ -1,4 +1,4 @@
-//When we controll input field with state
+//When we controll input field without state. We can control direct js and manipulating with dom
 import './App.css';
 import React, { useRef } from 'react'
 function App() {
